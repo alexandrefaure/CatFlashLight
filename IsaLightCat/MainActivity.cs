@@ -9,13 +9,10 @@ namespace IsaLightCat
     [Activity(Label = "IsaLightCat", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
-        int count = 1;
-
-        private Camera camera;
-        //        private Camera.Parameters parameters;
+        private static Camera camera;
         private bool isFlashOn = false;
         private ImageButton swithButton;
-        //        private MediaPlayer mp;
+        //        Android.Views.View view;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -26,12 +23,39 @@ namespace IsaLightCat
 
             // Get our button from the layout resource,
             // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.myButton);
-			
-            button.Click += delegate
+//            Button button = FindViewById<Button>(Resource.Id.myButton);
+            swithButton = (ImageButton)FindViewById<ImageButton>(Resource.Id.imageButton);
+
+            //camera = CameraActions.GetCamera();
+
+            SwitchImage();
+
+//            swithButton.SetOnClickListener(new Android.Views.View.IOnClickListener{ onClick(view, isFlashOn) });
+//
+            swithButton.Click += delegate
             {
-                button.Text = string.Format("{0} clicks!", count++);
+//                button.Text = string.Format("{0} clicks!", count++);
+                if (isFlashOn)
+                {
+                    CameraActions.TurnOffFlash(camera, isFlashOn);
+                }
+                else
+                {
+                    CameraActions.TurnOnFlash(camera, isFlashOn);
+                }
             };
+        }
+
+        public void onClick(Android.Views.View v, bool isFlashOn)
+        {
+            if (isFlashOn)
+            {
+                CameraActions.TurnOffFlash(camera, isFlashOn);
+            }
+            else
+            {
+                CameraActions.TurnOnFlash(camera, isFlashOn);
+            }
         }
 
         public static int randInt(int min, int max)
@@ -41,75 +65,7 @@ namespace IsaLightCat
             return randomNum;
         }
 
-        //        void getCamera()
-        //        {
-        //            if (camera == null)
-        //            {
-        //                try
-        //                {
-        //                    camera = Camera.Open();
-        //                    parameters = camera.GetParameters();
-        //                }
-        //                catch (Exception e)
-        //                {
-        //                    Log.Info("Failed to Open Camera");
-        //                }
-        //            }
-        //        }
-
-        //        public void turnOnFlash()
-        //        {
-        //            if (!isFlashOn)
-        //            {
-        //                if (camera == null && parameters == null)
-        //                {
-        //                    return;
-        //                }
-        //                //Camera camera = getCamera();
-        //                parameters = camera.GetParameters();
-        //                parameters.Set(Camera.Parameters.FlashModeOn);
-        //                camera.SetParameters(parameters);
-        ////                playSound();
-        //                isFlashOn = true;
-        ////                toggleButtonImage();
-        //                camera.StartPreview();
-        //
-        //            }
-        //        }
-        //
-        //        public void turnOffFlash()
-        //        {
-        //            if (isFlashOn != false)
-        //            {
-        //                if (camera == null && parameters == null)
-        //                {
-        //                    return;
-        //                }
-        //                //Camera camera = getCamera();
-        //                parameters = camera.GetParameters();
-        //                parameters.Set(Camera.Parameters.FlashModeOn);
-        //                camera.SetParameters(parameters);
-        //                isFlashOn = false;
-        ////                toggleButtonImage();
-        //                camera.StopPreview();
-        //            }
-        //        }
-
-        //            public void playSound()
-        //    {
-        //        int randomCatSound = getRandomCatSound();
-        //        mp = MediaPlayer.create(MainActivity.this, randomCatSound);
-        //        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-        //            @Override
-        //            public void onCompletion(MediaPlayer mp)
-        //            {
-        //                mp.release();
-        //            }
-        //        });
-        //        mp.start();
-        //    }
-
-        public void toggleButtonImage()
+        public void SwitchImage()
         {
             if (isFlashOn)
             {
@@ -121,7 +77,7 @@ namespace IsaLightCat
             }
         }
 
-        protected void onDestroy()
+        protected override void OnDestroy()
         {
             base.OnDestroy();
         }
@@ -131,15 +87,15 @@ namespace IsaLightCat
             base.OnPause();
 
             // on pause turn off the flash
-//            CameraActions.TurnOffFlash(isFlashOn);
+            CameraActions.TurnOffFlash(camera, isFlashOn);
         }
 
-        protected void onRestart()
+        protected override void OnRestart()
         {
             base.OnRestart();
         }
 
-        protected  void onResume()
+        protected override  void OnResume()
         {
             base.OnResume();
 
@@ -150,15 +106,15 @@ namespace IsaLightCat
             }
         }
 
-        protected void onStart()
+        protected override void OnStart()
         {
             base.OnStart();
 
             // on starting the app get the camera params
-            CameraActions.GetCamera(camera);
+            camera = CameraActions.GetCamera();
         }
 
-        protected void onStop()
+        protected override void OnStop()
         {
             base.OnStop();
 

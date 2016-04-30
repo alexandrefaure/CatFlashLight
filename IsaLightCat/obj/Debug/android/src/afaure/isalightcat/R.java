@@ -15,7 +15,7 @@ public final class R {
         public static final int isa_cat_open=0x7f020001;
     }
     public static final class id {
-        public static final int myButton=0x7f060000;
+        public static final int imageButton=0x7f060000;
     }
     public static final class layout {
         public static final int main=0x7f040000;

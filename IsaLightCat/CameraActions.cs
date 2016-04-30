@@ -4,29 +4,25 @@ using Android.Util;
 
 namespace IsaLightCat
 {
-    public class CameraActions
+    public static class CameraActions
     {
-        //        private Camera camera;
-        //        private Camera.Parameters parameters;
-
-        //        public CameraActions()
-        //        {
-        //        }
-
-        public static void GetCamera(Camera camera)
+        public static Camera GetCamera()
         {
-            if (camera == null)
+//            if (camera == null)
+//            {
+            Camera camera = null;
+            try
             {
-                try
-                {
-                    camera = Camera.Open();
-                    camera.GetParameters();
-                }
-                catch (Exception e)
-                {
-                    Log.Error(e.ToString(), "Impossible to get camera");
-                }
+                camera = Camera.Open();
+                camera.GetParameters();
+                return camera;
             }
+            catch (Exception e)
+            {
+                Log.Error(e.ToString(), "Impossible to get camera");
+            }
+            return camera;
+//            }
         }
 
         public static void TurnOnFlash(Camera camera, bool isFlashOn)

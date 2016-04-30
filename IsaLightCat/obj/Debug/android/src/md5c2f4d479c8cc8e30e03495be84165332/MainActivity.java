@@ -10,6 +10,11 @@ public class MainActivity
 	static {
 		__md_methods = 
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
+			"n_onDestroy:()V:GetOnDestroyHandler\n" +
+			"n_onRestart:()V:GetOnRestartHandler\n" +
+			"n_onResume:()V:GetOnResumeHandler\n" +
+			"n_onStart:()V:GetOnStartHandler\n" +
+			"n_onStop:()V:GetOnStopHandler\n" +
 			"";
 		mono.android.Runtime.register ("IsaLightCat.MainActivity, IsaLightCat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", MainActivity.class, __md_methods);
 	}
@@ -29,6 +34,46 @@ public class MainActivity
 	}
 
 	private native void n_onCreate (android.os.Bundle p0);
+
+
+	public void onDestroy ()
+	{
+		n_onDestroy ();
+	}
+
+	private native void n_onDestroy ();
+
+
+	public void onRestart ()
+	{
+		n_onRestart ();
+	}
+
+	private native void n_onRestart ();
+
+
+	public void onResume ()
+	{
+		n_onResume ();
+	}
+
+	private native void n_onResume ();
+
+
+	public void onStart ()
+	{
+		n_onStart ();
+	}
+
+	private native void n_onStart ();
+
+
+	public void onStop ()
+	{
+		n_onStop ();
+	}
+
+	private native void n_onStop ();
 
 	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
