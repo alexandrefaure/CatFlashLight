@@ -5,7 +5,6 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <application android:allowBackup="true" android:icon="@mipmap/icon" android:label="@string/app_name" android:name="mono.android.app.Application" android:debuggable="true">
-    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
     <activity android:icon="@mipmap/icon" android:label="IsaLightCat" android:name="md5c2f4d479c8cc8e30e03495be84165332.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

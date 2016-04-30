@@ -10,13 +10,10 @@
 /Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/res/mipmap-xhdpi/icon.png
 /Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/res/mipmap-xxhdpi/icon.png
 /Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/res/mipmap-xxxhdpi/icon.png
+/Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/res/drawable/isa_cat_close.png
+/Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/res/drawable/isa_cat_open.png
 /Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/R.cs.flag
 /Users/alexandre/Projects/IsaLightCat/IsaLightCat/bin/Debug/afaure.isalightcat-Signed.apk
 /Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/uploadflags.txt
 /Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/IsaLightCat.dll
 /Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/IsaLightCat.dll.mdb
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/bin/Debug/Xamarin.Android.Support.v13.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/bin/Debug/Xamarin.Android.Support.v4.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/bin/Debug/Xamarin.Android.Support.v7.MediaRouter.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/bin/Debug/Xamarin.Android.Support.v7.AppCompat.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/bin/Debug/GooglePlayServicesLib.dll

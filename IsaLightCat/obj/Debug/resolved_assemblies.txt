@@ -2,11 +2,6 @@
 /Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/assemblies/System.dll
 /Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/assemblies/System.Xml.dll
 /Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/assemblies/Mono.Android.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/assemblies/Xamarin.Android.Support.v13.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/assemblies/Xamarin.Android.Support.v4.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/assemblies/Xamarin.Android.Support.v7.MediaRouter.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/assemblies/Xamarin.Android.Support.v7.AppCompat.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/assemblies/GooglePlayServicesLib.dll
 /Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/assemblies/System.Core.dll
 /Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/assemblies/mscorlib.dll
 /Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Debug/assemblies/System.Runtime.Serialization.dll

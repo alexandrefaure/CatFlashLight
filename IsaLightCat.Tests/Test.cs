@@ -7,8 +7,9 @@ namespace IsaLightCat.Tests
     public class Test
     {
         [Test]
-        public void TestCase()
+        public void RandomIntResult_isBetweenMinAndMax()
         {
+
         }
     }
 }
