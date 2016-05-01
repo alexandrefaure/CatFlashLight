@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Xamarin.Android.NUnitLite" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -64,6 +66,10 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\drawable\isa_cat_close.png" />
     <AndroidResource Include="Resources\drawable\isa_cat_open.png" />
+    <AndroidResource Include="Resources\raw\tone_cat_meow.mp3" />
+    <AndroidResource Include="Resources\raw\tone_cat_meow2.mp3" />
+    <AndroidResource Include="Resources\raw\tone_cat_meow3.mp3" />
+    <AndroidResource Include="Resources\raw\tone_cat_meow4.mp3" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

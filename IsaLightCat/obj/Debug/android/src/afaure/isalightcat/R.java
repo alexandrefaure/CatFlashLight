@@ -15,16 +15,44 @@ public final class R {
         public static final int isa_cat_open=0x7f020001;
     }
     public static final class id {
-        public static final int imageButton=0x7f060000;
+        public static final int OptionHostName=0x7f070002;
+        public static final int OptionPort=0x7f070003;
+        public static final int OptionRemoteServer=0x7f070001;
+        public static final int OptionsButton=0x7f070011;
+        public static final int ResultFullName=0x7f07000c;
+        public static final int ResultMessage=0x7f07000e;
+        public static final int ResultResultState=0x7f07000d;
+        public static final int ResultRunSingleMethodTest=0x7f07000b;
+        public static final int ResultStackTrace=0x7f07000f;
+        public static final int ResultsFailed=0x7f070007;
+        public static final int ResultsId=0x7f070004;
+        public static final int ResultsIgnored=0x7f070008;
+        public static final int ResultsInconclusive=0x7f070009;
+        public static final int ResultsMessage=0x7f07000a;
+        public static final int ResultsPassed=0x7f070006;
+        public static final int ResultsResult=0x7f070005;
+        public static final int RunTestsButton=0x7f070010;
+        public static final int TestSuiteListView=0x7f070012;
+        public static final int imageButton=0x7f070000;
     }
     public static final class layout {
         public static final int main=0x7f040000;
+        public static final int options=0x7f040001;
+        public static final int results=0x7f040002;
+        public static final int test_result=0x7f040003;
+        public static final int test_suite=0x7f040004;
     }
     public static final class mipmap {
         public static final int icon=0x7f030000;
     }
+    public static final class raw {
+        public static final int tone_cat_meow=0x7f050000;
+        public static final int tone_cat_meow2=0x7f050001;
+        public static final int tone_cat_meow3=0x7f050002;
+        public static final int tone_cat_meow4=0x7f050003;
+    }
     public static final class string {
-        public static final int app_name=0x7f050001;
-        public static final int hello=0x7f050000;
+        public static final int app_name=0x7f060001;
+        public static final int hello=0x7f060000;
     }
 }

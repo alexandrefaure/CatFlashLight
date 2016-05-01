@@ -5,7 +5,9 @@
     android:layout_height="match_parent">
     <ImageButton
         android:src="@android:drawable/ic_menu_gallery"
+        android:scaleType="fitXY"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@null"
         android:id="@+id/imageButton" />
 </LinearLayout>

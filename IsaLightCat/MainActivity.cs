@@ -3,16 +3,20 @@ using Android.Widget;
 using Android.OS;
 using Android.Hardware;
 using System;
+using Android.Util;
+using Android.Media;
+using System.Collections.Generic;
 
 namespace IsaLightCat
 {
-    [Activity(Label = "IsaLightCat", MainLauncher = true, Icon = "@mipmap/icon")]
+    [Android.App.Activity(Label = "IsaLightCat", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
         private static Camera camera;
         private bool isFlashOn = false;
         private ImageButton swithButton;
-        //        Android.Views.View view;
+        private static Camera.Parameters parameters;
+        private MediaPlayer mp;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -21,48 +25,36 @@ namespace IsaLightCat
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-//            Button button = FindViewById<Button>(Resource.Id.myButton);
             swithButton = (ImageButton)FindViewById<ImageButton>(Resource.Id.imageButton);
 
-            //camera = CameraActions.GetCamera();
+            GetCamera();
 
             SwitchImage();
 
-//            swithButton.SetOnClickListener(new Android.Views.View.IOnClickListener{ onClick(view, isFlashOn) });
-//
             swithButton.Click += delegate
             {
-//                button.Text = string.Format("{0} clicks!", count++);
-                if (isFlashOn)
-                {
-                    CameraActions.TurnOffFlash(camera, isFlashOn);
-                }
-                else
-                {
-                    CameraActions.TurnOnFlash(camera, isFlashOn);
-                }
+                SwitchImage();
+                onClick(isFlashOn);
             };
         }
 
-        public void onClick(Android.Views.View v, bool isFlashOn)
+        public void onClick(bool isFlashOn)
         {
             if (isFlashOn)
             {
-                CameraActions.TurnOffFlash(camera, isFlashOn);
+                TurnOffFlash();
             }
             else
             {
-                CameraActions.TurnOnFlash(camera, isFlashOn);
+                TurnOnFlash();
             }
         }
 
-        public static int randInt(int min, int max)
+        public static int getRandomNumber(int min, int max)
         {
-            var rand = new Random();
-            int randomNum = rand.Next((max - min) + 1) + min;
-            return randomNum;
+            var random = new Random();
+            int randomNumber = random.Next((max - min) + 1) + min;
+            return randomNumber;
         }
 
         public void SwitchImage()
@@ -77,6 +69,88 @@ namespace IsaLightCat
             }
         }
 
+        public static void GetCamera()
+        {
+            if (camera == null)
+            {
+                try
+                {
+                    camera = Camera.Open();
+                    parameters = camera.GetParameters();
+                }
+                catch (Exception e)
+                {
+                    Log.Error(e.ToString(), "Impossible to get camera");
+                }
+            }
+        }
+
+        public void TurnOnFlash()
+        {
+            if (!isFlashOn)
+            {
+                if (camera == null && parameters == null)
+                {
+                    return;
+                }
+                parameters = camera.GetParameters();
+                parameters.FlashMode = Camera.Parameters.FlashModeTorch;
+                camera.SetParameters(parameters);
+                isFlashOn = true;
+                SwitchImage();
+                playSound();
+                camera.StartPreview();
+            }
+        }
+
+        public void TurnOffFlash()
+        {
+            if (isFlashOn != false)
+            {
+                if (camera == null && parameters == null)
+                {
+                    return;
+                }
+                parameters = camera.GetParameters();
+                parameters.FlashMode = Camera.Parameters.FlashModeOff;
+                camera.SetParameters(parameters);
+                isFlashOn = false;
+                SwitchImage();
+                camera.StopPreview();
+            }
+        }
+
+        public void playSound()
+        {
+            int randomCatSound = getRandomCatSound();
+            mp = MediaPlayer.Create(this, randomCatSound);//.Create(MainActivity.this, randomCatSound);
+
+            mp.Completion += delegate
+            {
+
+                onCompletion(mp);
+            };
+               
+            mp.Start();
+        }
+
+        public void onCompletion(MediaPlayer mp)
+        {
+            mp.Release();
+        }
+
+        private int getRandomCatSound()
+        {
+            var totoList = new List<int>();
+            totoList.Add(Resource.Raw.tone_cat_meow);
+            totoList.Add(Resource.Raw.tone_cat_meow2);
+            totoList.Add(Resource.Raw.tone_cat_meow3);
+            totoList.Add(Resource.Raw.tone_cat_meow4);
+
+            int randomCatSound = totoList[getRandomNumber(0, totoList.Count - 1)];
+            return randomCatSound;
+        }
+
         protected override void OnDestroy()
         {
             base.OnDestroy();
@@ -87,7 +161,7 @@ namespace IsaLightCat
             base.OnPause();
 
             // on pause turn off the flash
-            CameraActions.TurnOffFlash(camera, isFlashOn);
+            TurnOffFlash();
         }
 
         protected override void OnRestart()
@@ -102,7 +176,7 @@ namespace IsaLightCat
             // on resume turn on the flash
             if (isFlashOn)
             {
-                CameraActions.TurnOnFlash(camera, isFlashOn);
+                TurnOnFlash();
             }
         }
 
@@ -111,7 +185,7 @@ namespace IsaLightCat
             base.OnStart();
 
             // on starting the app get the camera params
-            camera = CameraActions.GetCamera();
+            GetCamera();
         }
 
         protected override void OnStop()
