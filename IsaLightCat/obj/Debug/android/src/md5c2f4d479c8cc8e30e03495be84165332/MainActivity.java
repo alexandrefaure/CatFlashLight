@@ -11,6 +11,7 @@ public class MainActivity
 		__md_methods = 
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
 			"n_onDestroy:()V:GetOnDestroyHandler\n" +
+			"n_onPause:()V:GetOnPauseHandler\n" +
 			"n_onRestart:()V:GetOnRestartHandler\n" +
 			"n_onResume:()V:GetOnResumeHandler\n" +
 			"n_onStart:()V:GetOnStartHandler\n" +
@@ -42,6 +43,14 @@ public class MainActivity
 	}
 
 	private native void n_onDestroy ();
+
+
+	public void onPause ()
+	{
+		n_onPause ();
+	}
+
+	private native void n_onPause ();
 
 
 	public void onRestart ()
