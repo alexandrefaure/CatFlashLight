@@ -1,9 +1,12 @@
 ﻿<Properties StartupItem="IsaLightCat/IsaLightCat.csproj" RefactoringSettings.EnableRefactorings="True">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.4df7b50077a1bfa9" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="IsaLightCat/MainActivity.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus_5_API_21" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="IsaLightCat/SoundActions.cs">
     <Files>
-      <File FileName="IsaLightCat/MainActivity.cs" Line="133" Column="24" />
-      <File FileName="IsaLightCat/CameraActions.cs" Line="1" Column="1" />
+      <File FileName="IsaLightCat/MainActivity.cs" Line="12" Column="38" />
+      <File FileName="IsaLightCat/CameraActions.cs" Line="5" Column="22" />
+      <File FileName="IsaLightCat/ImageActions.cs" Line="26" Column="1" />
+      <File FileName="IsaLightCat/SoundActions.cs" Line="33" Column="24" />
+      <File FileName="IsaLightCat/Properties/AndroidManifest.xml" Line="8" Column="102" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

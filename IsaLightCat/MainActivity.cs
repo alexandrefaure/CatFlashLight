@@ -3,10 +3,11 @@ using Android.Widget;
 using Android.OS;
 using Android.Hardware;
 using Android.Media;
+using Android.Content.PM;
 
 namespace IsaLightCat
 {
-    [Android.App.Activity(Label = "IsaLightCat", MainLauncher = true, Icon = "@mipmap/icon")]
+    [Android.App.Activity(Label = "IsaLightCat", MainLauncher = true, Icon = "@mipmap/icon", ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
         private static Camera camera;
