@@ -13,8 +13,11 @@ namespace IsaLightCat
         private static Camera camera;
         private bool isFlashOn = false;
         private ImageButton switchButton;
+        private Button infoButton;
+        private TextView infoTextView;
         private static Camera.Parameters parameters = null;
         private static MediaPlayer mediaPlayer = null;
+        private bool isInfoShown = false;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -31,6 +34,26 @@ namespace IsaLightCat
             {
                 isFlashOn = onClick(isFlashOn);
                 ImageActions.SwitchImage(switchButton, isFlashOn);
+            };
+            infoButton = (Button)FindViewById<Button>(Resource.Id.infoButton);
+            infoTextView = (TextView)FindViewById<TextView>(Resource.Id.textView1);
+            infoTextView.Visibility = Android.Views.ViewStates.Gone;
+            infoButton.Click += delegate
+            {
+                if (isInfoShown)
+                {
+                    isInfoShown = false;
+                    infoTextView.Visibility = Android.Views.ViewStates.Gone;
+                    switchButton.Visibility = Android.Views.ViewStates.Visible;
+                    infoButton.Text = "Info";
+                }
+                else
+                {
+                    isInfoShown = true;
+                    infoTextView.Visibility = Android.Views.ViewStates.Visible;
+                    switchButton.Visibility = Android.Views.ViewStates.Gone;
+                    infoButton.Text = "Back";
+                }
             };
         }
 
