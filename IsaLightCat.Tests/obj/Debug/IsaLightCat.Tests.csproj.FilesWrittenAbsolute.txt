@@ -1,6 +1,0 @@
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat.Tests/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat.Tests/bin/Debug/IsaLightCat.Tests.dll.mdb
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat.Tests/bin/Debug/IsaLightCat.Tests.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat.Tests/obj/Debug/IsaLightCat.Tests.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat.Tests/obj/Debug/IsaLightCat.Tests.dll.mdb
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat.Tests/bin/Debug/nunit.framework.dll

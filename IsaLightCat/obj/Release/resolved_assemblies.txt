@@ -1,9 +1,0 @@
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Release/android/assets/IsaLightCat.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Release/android/assets/System.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Release/android/assets/System.Xml.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Release/android/assets/Mono.Android.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Release/android/assets/Xamarin.Android.NUnitLite.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Release/android/assets/System.Core.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Release/android/assets/mscorlib.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Release/android/assets/System.Runtime.Serialization.dll
-/Users/alexandre/Projects/IsaLightCat/IsaLightCat/obj/Release/android/assets/System.ServiceModel.Internals.dll
